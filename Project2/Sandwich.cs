@@ -8,15 +8,13 @@ namespace Project2 {
 		/// <summary>
 		/// Backing Array containing selected meats
 		/// </summary>
-		private Meat[]meats;
+		private Meat[] meats;
 		/// <summary>
 		/// Backing Array containing selected toppings
 		/// </summary>
-		private Topping[]toppings;
+		private Topping[] toppings;
 
-		public Sandwich() {
-			throw new System.NotImplementedException();
-		}
+		public Sandwich() {}
 
 		/// <summary>
 		/// Size of the sandwich

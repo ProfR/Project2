@@ -63,6 +63,10 @@ namespace Project2 {
 		}
 
 		public static void GetSandwich ( int _count ) {
+			Utility.WriteColor( $" ==> Now entering selections for Sandwich #{_count}\n", Utility.PROMPT );
+
+			Sandwich aSandwich = new Sandwich();
+			sandwiches.Add( aSandwich );
 			
 		}
 
