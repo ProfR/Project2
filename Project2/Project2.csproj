@@ -3,6 +3,14 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <Authors>Prof. R.</Authors>
+    <Company>MAD</Company>
+    <Description>Project 2 of the T-Squared series</Description>
+    <Copyright>RIT/NTID 2021</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>N:\msrvks\Project2\Project2\Project2\Project2.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>

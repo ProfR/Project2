@@ -8,65 +8,83 @@ namespace Project2 {
 		/// <summary>
 		/// Backing Array containing selected meats
 		/// </summary>
-		private Meat[] meats;
+		private List<Meat> meats;
 		/// <summary>
 		/// Backing Array containing selected toppings
 		/// </summary>
-		private Topping[] toppings;
-
-		public Sandwich() {}
+		private List<Topping> toppings;
 
 		/// <summary>
 		/// Size of the sandwich
 		/// </summary>
-		public Size Size {
-			get => default;
-			set {
-			}
-		}
+		public Size Size { get; set; }
 
 		/// <summary>
 		/// Array containing selected toppings
 		/// </summary>
-		public Topping[] Toppings {
-			get => default;
+		public List<Topping> Toppings {
+			get { return toppings; }
 			set {
+				toppings = value;
 			}
 		}
 
 		/// <summary>
 		/// Dressing selected
 		/// </summary>
-		public Dressing Dressing {
-			get => default;
-			set {
-			}
-		}
+		public Dressing Dressing { get; set; }
 
 		/// <summary>
 		/// Array containing selected meats
 		/// </summary>
-		public Meat[] Meat {
-			get => default;
+		public List<Meat> Meats {
+			get { return meats; }
 			set {
-			}
+				meats = value; }
 		}
 
 		/// <summary>
 		/// Cheese Selected
 		/// </summary>
-		public Cheese Cheese {
-			get => default;
-			set {
+		public Cheese Cheese { get; set; }
+
+		public Sandwich() { }
+
+		public Sandwich( Size _size, Dressing _dressing, List<Topping> _toppings, List<Meat> _meats, Cheese _cheese ) {
+			Size = _size;
+			Dressing = _dressing;
+			Toppings = _toppings;
+			Meats = _meats;
+			Cheese = _cheese;
+		}
+		public double CalculateSubTotal() {
+			int subSize = (int) Size;
+			double subtotal = 0.0;
+			subtotal += Utility.GetPrice( Size, Utility.SIZE_INDEX );
+			foreach ( Topping aTopping in Toppings ) {
+				if ( aTopping.ToString() != "None" ) subtotal += Utility.GetPrice( Size, Utility.TOPPING_INDEX );
 			}
+			foreach ( Meat aMeat in Meats ) {
+				if ( aMeat.ToString() != "None" ) subtotal += Utility.GetPrice( Size, Utility.MEAT_INDEX );
+			}
+			if ( Cheese.ToString() != "None" ) subtotal += Utility.GetPrice( Size, Utility.CHEESE_INDEX );
+			return subtotal;
 		}
 
-		public void AddMeat( Meat _meat ) {
-			throw new System.NotImplementedException();
-		}
+		public string Format() { return "{0,-20} {1,8:C}\n"; }
 
-		public void AddTopping( Topping _topping ) {
-			throw new System.NotImplementedException();
+		public override string ToString() {
+			string summary = "";
+			summary += string.Format( Format(), $"Size: {Size}", Utility.GetPrice( Size, Utility.SIZE_INDEX ) );
+			summary += string.Format( Format(), $"Dressing: {Dressing}", 0 );
+			foreach (Topping aTopping in Toppings) {
+				if ( aTopping.ToString() != "None" ) summary += string.Format( Format(), $"Topping: {aTopping.ToString()}", Utility.GetPrice( Size, Utility.TOPPING_INDEX ) );
+			}
+			foreach ( Meat aMeat in Meats ) {
+				if ( aMeat.ToString() != "None" ) summary += String.Format( Format(), $"Meat: {aMeat.ToString()}", Utility.GetPrice( Size, Utility.MEAT_INDEX ) );
+			}
+			if ( Cheese.ToString() != "None" ) summary += String.Format( Format(), $"Cheese: {Cheese.ToString()}", Utility.GetPrice( Size, Utility.CHEESE_INDEX ) );
+			return summary;
 		}
 	}
 }

@@ -12,6 +12,7 @@ namespace Project2 {
 		Swiss,
 		American,
 		Cheddar,
-		Muenster
+		Muenster,
+		None
 	}
 }

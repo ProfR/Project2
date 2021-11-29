@@ -14,8 +14,8 @@ namespace Project2 {
 		static Size size;
 		static Dressing dressing;
 		static Cheese cheese;
-		static Topping[] toppings;
-		static Meat[] meats;
+		static List<Topping> toppings;
+		static List<Meat> meats;
 
 		static void Main( string[] args ) {
 			Welcome();
@@ -70,15 +70,23 @@ namespace Project2 {
 		public static void GetSandwich ( int _count ) {
 			Utility.WriteColor( $"\n ==> Now entering selections for Sandwich #{_count}\n", Utility.PROMPT );
 
+			meats = new List<Meat>();
+			toppings = new List<Topping>();
+			
 			size = (Size)GetSandwichSize();
 			dressing = (Dressing)GetDressing();
-
+			GetToppings();
+			GetMeats();
 			cheese = (Cheese)GetCheese();
 
 
-			Console.WriteLine( $"{size}" );
-			Sandwich aSandwich = new Sandwich();
+			//Console.WriteLine( $"{size}" );
+			Sandwich aSandwich = new Sandwich(size, dressing, toppings, meats, cheese);
 			sandwiches.Add( aSandwich );
+			Console.WriteLine();
+			Utility.WriteColor( aSandwich.ToString(), Utility.MENU );
+			Utility.WriteColor( string.Format( "{0,20}, {1,8:C}", "  == SUBTOTAL ==>", aSandwich.CalculateSubTotal() ), Utility.PROMPT );
+			//Utility.WriteColor( $"The total for this sandwich is { aSandwich.CalculateSubTotal():C}", Utility.MENU );
 		}
 
 		public static int GetSandwichSize() {
@@ -98,6 +106,29 @@ namespace Project2 {
 			List<string> cheeses = new List<string>();
 			foreach ( Cheese value in Enum.GetValues( typeof( Cheese ) ) ) cheeses.Add( value.ToString() );
 			return Utility.GetEnumValue( cheeses, "\nSelect a cheese: ", "Enter the selection for the desired cheese: " );
+		}
+
+		public static void GetMeats() {
+			List<string> choices = new List<string>();
+			foreach ( Meat value in Enum.GetValues( typeof( Meat ) ) ) choices.Add( value.ToString() );
+			while(true) {
+				Meat aMeat =  (Meat) Utility.GetEnumValue ( choices, "\nSelect a meat: ", "Enter the selection for the desired meat: ");
+				meats.Add( aMeat );
+				Utility.WriteColor( "\n ==> Do you want to add another (or duplicate) meat to this sandwich? (y/n) ", Utility.PROMPT, SAMELINE );
+				char orderDone = Console.ReadLine()[0];
+				if ( char.ToUpper( orderDone ) != 'Y' ) break;
+			}
+		}
+		public static void GetToppings() {
+			List<string> choices = new List<string>();
+			foreach ( Topping value in Enum.GetValues( typeof( Topping ) ) ) choices.Add( value.ToString() );
+			while ( true ) {
+				Topping aTopping =  (Topping) Utility.GetEnumValue ( choices, "\nSelect a topping: ", "Enter the selection for the desired topping: ");
+				toppings.Add( aTopping );
+				Utility.WriteColor( "\n ==> Do you want to add another (or duplicate) topping to this sandwich? (y/n) ", Utility.PROMPT, SAMELINE );
+				char orderDone = Console.ReadLine()[0];
+				if ( char.ToUpper( orderDone ) != 'Y' ) break;
+			}
 		}
 
 		public static void CreateReceipt() {

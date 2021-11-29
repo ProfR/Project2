@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Project2</name>
+    </assembly>
+    <members>
+        <member name="T:Project2.Cheese">
+            <summary>
+            Cheeses available for a sandwich
+            </summary>
+        </member>
+        <member name="T:Project2.Dressing">
+            <summary>
+            Dressings available for a sandwich
+            </summary>
+        </member>
+        <member name="T:Project2.Meat">
+            <summary>
+            Enum listing the meats availaable for a sandwich
+            </summary>
+        </member>
+        <member name="F:Project2.Meat.Roast_Beef">
+            <summary>
+            Roast Beef
+            </summary>
+        </member>
+        <member name="F:Project2.Meat.Turkey">
+            <summary>
+            Turkey
+            </summary>
+        </member>
+        <member name="F:Project2.Meat.Tuna_Salad">
+            <summary>
+            Tuna salad
+            </summary>
+        </member>
+        <member name="F:Project2.Meat.Chicken_Salad">
+            <summary>
+            Chicken Salad
+            </summary>
+        </member>
+        <member name="F:Project2.Meat.Salami">
+            <summary>
+            Salami
+            </summary>
+        </member>
+        <member name="F:Project2.Program.sandwiches">
+            <summary>
+            List containing sandwich objects
+            </summary>
+        </member>
+        <member name="M:Project2.Program.Welcome">
+            <summary>
+            Displays Welcome message and requests customer name
+            </summary>
+        </member>
+        <member name="M:Project2.Program.StartOrder">
+            <summary>
+            Asks for Name and Delivery Action
+            </summary>
+        </member>
+        <member name="F:Project2.Sandwich.meats">
+            <summary>
+            Backing Array containing selected meats
+            </summary>
+        </member>
+        <member name="F:Project2.Sandwich.toppings">
+            <summary>
+            Backing Array containing selected toppings
+            </summary>
+        </member>
+        <member name="P:Project2.Sandwich.Size">
+            <summary>
+            Size of the sandwich
+            </summary>
+        </member>
+        <member name="P:Project2.Sandwich.Toppings">
+            <summary>
+            Array containing selected toppings
+            </summary>
+        </member>
+        <member name="P:Project2.Sandwich.Dressing">
+            <summary>
+            Dressing selected
+            </summary>
+        </member>
+        <member name="P:Project2.Sandwich.Meats">
+            <summary>
+            Array containing selected meats
+            </summary>
+        </member>
+        <member name="P:Project2.Sandwich.Cheese">
+            <summary>
+            Cheese Selected
+            </summary>
+        </member>
+        <member name="T:Project2.Size">
+            <summary>
+            Enum listing the sandwich sizes available
+            </summary>
+        </member>
+        <member name="F:Project2.Size.Small">
+            <summary>
+            Small Sub Sandwich
+            </summary>
+        </member>
+        <member name="F:Project2.Size.Medium">
+            <summary>
+            Medium Sub Sandwich
+            </summary>
+        </member>
+        <member name="F:Project2.Size.Large">
+            <summary>
+            Large Sub Sandwich
+            </summary>
+        </member>
+        <member name="T:Project2.Topping">
+            <summary>
+            Toppings (vegetables) availaable for a sandwich
+            </summary>
+        </member>
+        <member name="F:Project2.Utility.prices">
+            <summary>
+            Array with current pricing structure
+            </summary>
+        </member>
+        <member name="F:Project2.Utility.SIZE_INDEX">
+            <summary>
+            Size index to pricing array
+            </summary>
+        </member>
+        <member name="F:Project2.Utility.TOPPING_INDEX">
+            <summary>
+            Topping index to pricing array
+            </summary>
+        </member>
+        <member name="F:Project2.Utility.MEAT_INDEX">
+            <summary>
+            Meat index to pricing array
+            </summary>
+        </member>
+        <member name="F:Project2.Utility.CHEESE_INDEX">
+            <summary>
+            Cheese index to pricing array
+            </summary>
+        </member>
+        <member name="F:Project2.Utility.ERROR">
+            <summary>
+            Color value to display errors
+            </summary>
+        </member>
+        <member name="F:Project2.Utility.TEXT">
+            <summary>
+            Color value for generic text
+            </summary>
+        </member>
+        <member name="F:Project2.Utility.PROMPT">
+            <summary>
+            Color value to display prompt after menu list
+            </summary>
+        </member>
+        <member name="F:Project2.Utility.MENU">
+            <summary>
+            Color value to display menu items
+            </summary>
+        </member>
+        <member name="F:Project2.Utility.DELIVERY_FEE">
+            <summary>
+            Static charge for a delivery order
+            </summary>
+        </member>
+        <member name="F:Project2.Utility.SAMELINE">
+            <summary>
+            Constant value indicating a WriteColor should not start a new line
+            </summary>
+        </member>
+        <member name="M:Project2.Utility.WriteColor(System.String,System.ConsoleColor,System.Boolean)">
+            <summary>
+            Displays the provided text string in the specified color
+            </summary>
+            <param name="_msg">Text to display</param>
+            <param name="_color">Color to display</param>
+            <param name="_newLine">Include New Line (default true)</param>
+        </member>
+        <member name="M:Project2.Utility.GetEnumValue(System.Collections.Generic.List{System.String},System.String,System.String)">
+            <summary>
+            Gets the index to a provided enum list.  Automatically confirms entered value is numeric and in range.
+            </summary>
+            <param name="_values">List of string containing the values for the enum</param>
+            <param name="_intro">string to be presented at the top of the selection list</param>
+            <param name="_prompt">prompt issued after the selection list is displayed</param>
+            <returns>int marker corresponding to the the selection made.</returns>
+        </member>
+        <member name="M:Project2.Utility.GetPrice(Project2.Size,System.Int32)">
+            <summary>
+            Utility to obtain an item price for a specific size
+            </summary>
+            <param name="_size">Index value to the sub size (based on the size enum)</param>
+            <param name="_type">Index value to the price row (size, topping, meat, etc.)</param>
+        </member>
+    </members>
+</doc>

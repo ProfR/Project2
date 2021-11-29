@@ -5,6 +5,7 @@
 	public enum Dressing {
 		Italian,
 		Honey_Mustard,
-		Mayo
+		Mayo,
+		None
 	}
 }
