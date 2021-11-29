@@ -3,21 +3,21 @@
   <Class Name="Project2.Sandwich" Collapsed="true">
     <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAIMgAAAAAAEAIAQDAAAAAQAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAgAgAAMgAAAAAAAAIgADAAAAAQAAAAAAAA=</HashCode>
       <FileName>Sandwich.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project2.Program" Collapsed="true">
     <Position X="1.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAgAACAACAgAAAAIAAAAAICAAAAGAAABAABAQAgAA=</HashCode>
+      <HashCode>AABAgAACAACAgAAIAIAAAAALSAAAAGAACBQBBQQAgAg=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project2.Utility">
     <Position X="9.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABIAABAAAAQQQAkAAAAAAAAAAggQIAAAAAACQAAAA=</HashCode>
+      <HashCode>gAABYAABAAAAQQQAkAAAAAAAAAAggQIAAAAAACQAAAA=</HashCode>
       <FileName>Utility.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -42,7 +42,7 @@
       <FileName>Cheese.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="Project2.Topping" Collapsed="true">
+  <Enum Name="Project2.Topping">
     <Position X="3" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAQAQAAIAAAAAAAAAAAAIAAAA=</HashCode>

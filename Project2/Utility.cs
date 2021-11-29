@@ -4,6 +4,19 @@ using System.Linq;
 using System.Text;
 
 namespace Project2 {
+	/// <summary>
+	/// Class containing utility methods and static constants
+	/// </summary>
+	/// <remarks>
+	/// This class contains:
+	/// 1. Pricing matrix
+	/// 2. Constants for accessing the matrix
+	/// 3. A method for capturing pricing from the matrix
+	/// 4. Color display constants
+	/// 5. Tax Rate
+	/// 6. Method to display text in color
+	/// 7. Method to generate a menu list, obtain input, validate input
+	/// </remarks>
 	public static class Utility {
 		/// <summary>
 		/// Array with current pricing structure
@@ -110,7 +123,7 @@ namespace Project2 {
 		/// <param name="_size">Index value to the sub size (based on the size enum)</param>
 		/// <param name="_type">Index value to the price row (size, topping, meat, etc.)</param>
 		public static double GetPrice( Size _size, int _type ) {
-			return prices[_type, (int) _size];
+			return prices[_type, (int)_size];
 		}
 	}
 }
