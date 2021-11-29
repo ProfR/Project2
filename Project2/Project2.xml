@@ -9,9 +9,59 @@
             Cheeses available for a sandwich
             </summary>
         </member>
+        <member name="F:Project2.Cheese.Provolone">
+            <summary>
+            Provolone Cheese
+            </summary>
+        </member>
+        <member name="F:Project2.Cheese.Swiss">
+            <summary>
+            Swiss Cheese
+            </summary>
+        </member>
+        <member name="F:Project2.Cheese.American">
+            <summary>
+            American Cheese
+            </summary>
+        </member>
+        <member name="F:Project2.Cheese.Cheddar">
+            <summary>
+            Cheddar Cheese
+            </summary>
+        </member>
+        <member name="F:Project2.Cheese.Muenster">
+            <summary>
+            Muenster Cheese
+            </summary>
+        </member>
+        <member name="F:Project2.Cheese.None">
+            <summary>
+            No Cheese Selected
+            </summary>
+        </member>
         <member name="T:Project2.Dressing">
             <summary>
             Dressings available for a sandwich
+            </summary>
+        </member>
+        <member name="F:Project2.Dressing.Italian">
+            <summary>
+            Italian dressing
+            </summary>
+        </member>
+        <member name="F:Project2.Dressing.Honey_Mustard">
+            <summary>
+            Honey Mustard dressing
+            </summary>
+        </member>
+        <member name="F:Project2.Dressing.Mayo">
+            <summary>
+            Mayonaise
+            </summary>
+        </member>
+        <member name="F:Project2.Dressing.None">
+            <summary>
+            No dressing selected
             </summary>
         </member>
         <member name="T:Project2.Meat">
@@ -44,9 +94,84 @@
             Salami
             </summary>
         </member>
+        <member name="T:Project2.Program">
+            <summary>
+            Main logic for the program.  Contains the entry point.
+            </summary>
+        </member>
         <member name="F:Project2.Program.sandwiches">
             <summary>
             List containing sandwich objects
+            </summary>
+        </member>
+        <member name="F:Project2.Program.isDelivery">
+            <summary>
+            Flag indicating if this is a delivery order (true) or a pickup order (false)
+            </summary>
+        </member>
+        <member name="F:Project2.Program.SAMELINE">
+            <summary>
+            Constant value (false) for use with WriteColor when you don't want a new line generated
+            </summary>
+        </member>
+        <member name="F:Project2.Program.customerName">
+            <summary>
+            Holding variable for customer name
+            </summary>
+        </member>
+        <member name="F:Project2.Program.size">
+            <summary>
+            Holding variable for sandwich size
+            </summary>
+        </member>
+        <member name="F:Project2.Program.dressing">
+            <summary>
+            Holding variable for Dressing selection
+            </summary>
+        </member>
+        <member name="F:Project2.Program.cheese">
+            <summary>
+            Holding variable for Cheese type
+            </summary>
+        </member>
+        <member name="F:Project2.Program.toppings">
+            <summary>
+            List containing toppings ordered
+            </summary>
+        </member>
+        <member name="F:Project2.Program.meats">
+            <summary>
+            Temporary holding list for meat selections during sandwich order
+            </summary>
+        </member>
+        <member name="F:Project2.Program.sandwichCount">
+            <summary>
+            Number of sandwiches in this order
+            </summary>
+        </member>
+        <member name="F:Project2.Program.sandwichTotal">
+            <summary>
+            Total cost of all sandwiches ordered (aggregate)
+            </summary>
+        </member>
+        <member name="F:Project2.Program.taxAmount">
+            <summary>
+            Calculated value of sales tax
+            </summary>
+        </member>
+        <member name="F:Project2.Program.finalTotal">
+            <summary>
+            Calculation variable for final total (all parts)
+            </summary>
+        </member>
+        <member name="F:Project2.Program.workingTotal">
+            <summary>
+            Holding variable for calculations
+            </summary>
+        </member>
+        <member name="M:Project2.Program.Main(System.String[])">
+            <summary>
+            Main entry point for the program
             </summary>
         </member>
         <member name="M:Project2.Program.Welcome">
@@ -57,6 +182,51 @@
         <member name="M:Project2.Program.StartOrder">
             <summary>
             Asks for Name and Delivery Action
+            </summary>
+        </member>
+        <member name="M:Project2.Program.TakeOrder">
+            <summary>
+            Managing method for taking multiple sandwich orders
+            </summary>
+        </member>
+        <member name="M:Project2.Program.GetSandwich(System.Int32)">
+            <summary>
+            Managing method to create a single sandwich object
+            </summary>
+        </member>
+        <member name="M:Project2.Program.GetSandwichSize">
+            <summary>
+            Method to get the size of an individual sandwich
+            </summary>
+        </member>
+        <member name="M:Project2.Program.GetDressing">
+            <summary>
+            Method to get the customer's Dressing selection for this sandwich
+            </summary>
+        </member>
+        <member name="M:Project2.Program.GetCheese">
+            <summary>
+            Method to get the customer's Cheese selection for this sandwich
+            </summary>
+        </member>
+        <member name="M:Project2.Program.GetMeats">
+            <summary>
+            Method to collect one or more meats for the sandwich
+            </summary>
+        </member>
+        <member name="M:Project2.Program.GetToppings">
+            <summary>
+            Method to collect one or more toppings for a sandwich
+            </summary>
+        </member>
+        <member name="M:Project2.Program.CreateReceipt">
+            <summary>
+            Method to generate receipt upon conclusion of data entry.
+            </summary>
+        </member>
+        <member name="T:Project2.Sandwich">
+            <summary>
+            Class to contain a single detailed instance of a sandwich
             </summary>
         </member>
         <member name="F:Project2.Sandwich.meats">
@@ -94,6 +264,39 @@
             Cheese Selected
             </summary>
         </member>
+        <member name="M:Project2.Sandwich.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Project2.Sandwich.#ctor(Project2.Size,Project2.Dressing,System.Collections.Generic.List{Project2.Topping},System.Collections.Generic.List{Project2.Meat},Project2.Cheese)">
+            <summary>
+            Parameterized Constructor
+            </summary>
+            <param name="_size">Sandwich Size</param>
+            <param name="_dressing">Sandwich Dressing (or none)</param>
+            <param name="_toppings">
+            List containing individual topping selections.  
+            Note: user can select multiple toppings and can double up toppings by multiple selection.
+            </param>
+            <param name="_meats">List containing individual meet selections.</param>
+            <param name="_cheese">Cheese selected for the sandwich</param>
+        </member>
+        <member name="M:Project2.Sandwich.CalculateSubTotal">
+            <summary>
+            Calculate the cost for this sandwich based on the options selected
+            </summary>
+        </member>
+        <member name="M:Project2.Sandwich.Format">
+            <summary>
+            Method to return a string used for formatting
+            </summary>
+        </member>
+        <member name="M:Project2.Sandwich.ToString">
+            <summary>
+            Method to prepare a formatted string containing all detail for the sandwich
+            </summary>
+        </member>
         <member name="T:Project2.Size">
             <summary>
             Enum listing the sandwich sizes available
@@ -118,6 +321,61 @@
             <summary>
             Toppings (vegetables) availaable for a sandwich
             </summary>
+        </member>
+        <member name="F:Project2.Topping.Lettuce">
+            <summary>
+            Lettuce Selection
+            </summary>
+        </member>
+        <member name="F:Project2.Topping.Onion">
+            <summary>
+            Onion Selection
+            </summary>
+        </member>
+        <member name="F:Project2.Topping.Sweet_Peppers">
+            <summary>
+            Sweet Peppers Selection
+            </summary>
+        </member>
+        <member name="F:Project2.Topping.Hot_Peppers">
+            <summary>
+            Hot Peppers Selection
+            </summary>
+        </member>
+        <member name="F:Project2.Topping.Tomato">
+            <summary>
+            Tomato Selection
+            </summary>
+        </member>
+        <member name="F:Project2.Topping.Black_Olive">
+            <summary>
+            Black Olive Selection
+            </summary>
+        </member>
+        <member name="F:Project2.Topping.Cucumber">
+            <summary>
+            Cucumber Selection
+            </summary>
+        </member>
+        <member name="F:Project2.Topping.None">
+            <summary>
+            Nothing selected (no topping)
+            </summary>
+        </member>
+        <member name="T:Project2.Utility">
+            <summary>
+            Class containing utility methods and static constants
+            </summary>
+            <remarks>
+            This class contains:
+            1. Pricing matrix
+            2. Constants for accessing the matrix
+            3. A method for capturing pricing from the matrix
+            4. Color display constants
+            5. Tax Rate
+            6. Method to display text in color
+            7. Method to generate a menu list, obtain input, validate input
+            </remarks>
         </member>
         <member name="F:Project2.Utility.prices">
             <summary>
