@@ -44,15 +44,23 @@ namespace Project2 {
 		/// Color value to display menu items
 		/// </summary>
 		public const ConsoleColor MENU = ConsoleColor.Cyan;
+		/// <summary>
+		/// Color for receipt accents
+		/// </summary>
+		public const ConsoleColor HEADER = ConsoleColor.Green;
 
 		/// <summary>
 		/// Static charge for a delivery order
 		/// </summary>
-		static double DELIVERY_FEE = 4.50;
+		public const double DELIVERY_FEE = 4.50;
 		/// <summary>
 		/// Constant value indicating a WriteColor should not start a new line
 		/// </summary>
 		public const bool SAMELINE = false;
+		/// <summary>
+		/// Static Tax Rate
+		/// </summary>
+		public const double TAX_RATE = .08;
 
 
 		/// <summary>

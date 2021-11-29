@@ -164,6 +164,11 @@
             Color value to display menu items
             </summary>
         </member>
+        <member name="F:Project2.Utility.HEADER">
+            <summary>
+            Color for receipt accents
+            </summary>
+        </member>
         <member name="F:Project2.Utility.DELIVERY_FEE">
             <summary>
             Static charge for a delivery order
@@ -172,6 +177,11 @@
         <member name="F:Project2.Utility.SAMELINE">
             <summary>
             Constant value indicating a WriteColor should not start a new line
+            </summary>
+        </member>
+        <member name="F:Project2.Utility.TAX_RATE">
+            <summary>
+            Static Tax Rate
             </summary>
         </member>
         <member name="M:Project2.Utility.WriteColor(System.String,System.ConsoleColor,System.Boolean)">

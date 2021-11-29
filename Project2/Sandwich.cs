@@ -71,7 +71,7 @@ namespace Project2 {
 			return subtotal;
 		}
 
-		public string Format() { return "{0,-20} {1,8:C}\n"; }
+		public string Format() { return "{0,-23} {1,8:C}\n"; }
 
 		public override string ToString() {
 			string summary = "";
